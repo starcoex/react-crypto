@@ -1,0 +1,7 @@
+body {
+  display: flex;
+}
+.title {
+  font-family: sans-serif;
+  font-size: 24px;
+}
