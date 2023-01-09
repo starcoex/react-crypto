@@ -5,7 +5,6 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { isDarkAtom } from './atoms';
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme, lightTheme } from './theme';
-import { useState } from 'react';
 
 const Toggle = styled.button`
 	display: flex;
