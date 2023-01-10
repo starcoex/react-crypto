@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import Price from './Price';
 import Chart from './Chart';
 import { Link } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 import { fetchCoinInfo, fetchCoinTickers } from '../api';
 
 const Container = styled.div`

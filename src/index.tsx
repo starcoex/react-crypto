@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { RecoilRoot } from 'recoil';
 
 import App from "./App";
@@ -16,6 +16,6 @@ root.render(
       <QueryClientProvider client={qeuryClient}>
         <App />
       </QueryClientProvider>
-    </RecoilRoot>{" "}
+    </RecoilRoot>
   </React.StrictMode>
 );

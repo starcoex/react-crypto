@@ -1,11 +1,10 @@
 import { Helmet } from 'react-helmet';
-import { useQuery } from '@tanstack/react-query'
+import { useQuery } from 'react-query'
 import { Link } from 'react-router-dom';
-import { constSelector, useSetRecoilState } from 'recoil';
+import { useSetRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { fetchCoins } from '../api';
 import { isDarkAtom } from '../atoms';
-import { Key, ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
 
 const Container = styled.div`
 	padding: 0 20px;
@@ -68,8 +67,8 @@ function Coins() {
 	// 	'allCoins',
 	// 	fetchCoins
 	// );
-	const { isLoading, data } = useQuery(["allCoins"], fetchCoins);
-	console.log(data)
+	const { isLoading, data } = useQuery<CoinInterface[]>(["allCoins"], fetchCoins);
+	// console.log(data)
 	const setDartAtom = useSetRecoilState(isDarkAtom)
 	const toggleDartAtom = () => setDartAtom((prev) => !prev)
 	return (
@@ -87,7 +86,7 @@ function Coins() {
 				<Loader>Loading...</Loader>
 			) : (
 				<CoinsList>
-					{data?.slice(0, 100).map((coin: { id: Key | null | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | ReactFragment | ReactPortal | null | undefined; }) => (
+					{data?.slice(0, 100).map((coin) => (
 						<Coin key={coin.id}>
 							<Link
 								to={{
